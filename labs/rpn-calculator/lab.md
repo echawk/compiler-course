@@ -6,13 +6,13 @@ compiler for a stack-based virtual machine (defined below).
 For those who need a refresher on RPN, this is how it looks:
 
 ```
-7 22 3 + 5 * 4 +
+7 22 3 + 5 * 4 + 3 -
 ```
 
 The above operation expressed in infix notation is:
 
 ```
-((7 + 22 + 3) * 5) + 4
+3 - (4 + (5 * (3 + 22 + 7)))
 ```
 
 ## Front End
@@ -40,11 +40,11 @@ The virtual machine shall implement the following instructions:
 
 **ADD** - adds all values in the stack and leaves the result at the top of the stack
 
-**SUB** -
+**SUB** - subtracts the top of the stack from every value left in the stack and leaves result at the top of the stack
 
 **MUL** - multiplies all values in the stack and leaves the result at the top of the stack
 
-**DIV** -
+**DIV** - floor divides the top of the stack from every value left in the stack and leaves the result at the top of the stack
 
 
 Do **not** worry about implementing floating point arithmetic or negative numbers, this is
