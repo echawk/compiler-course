@@ -27,6 +27,10 @@ structure of a compiler down.
 'A' level labs should have a clear separation of parts, from the scanner, to the tokenizer,
 to the lexer, to the parser, etc.
 
+If you wish to see an example of what this is supposed to do, see the file 'frontend.sh'
+It is important to note that this frontend does **not** emit bytecode, but instead effectively
+emits assembly.
+
 ## Objectives
 
 * To implement a stack based virtual machine
