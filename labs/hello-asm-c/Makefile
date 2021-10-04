@@ -15,10 +15,10 @@ hello-c.o: hello-c.s
 	as $< -o $@
 
 hello-c.s: hello-c.c
-	gcc $(CFLAGS) -S -masm=intel -fverbose-asm $< -o $@
+	$(CC) $(CFLAGS) -S -masm=intel -fverbose-asm $< -o $@
 
 hello-c-oneshot: hello-c.c
-	gcc $(CFLAGS) -Os $< -o $@
+	$(CC) $(CFLAGS) -Os $< -o $@
 
 clean:
 	rm hello-as hello-as.o hello-c hello-c.s hello-c.o hello-c-oneshot
