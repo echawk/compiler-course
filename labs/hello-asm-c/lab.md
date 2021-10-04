@@ -21,7 +21,7 @@ Using these files to help you better understand how C gets translated,
 translate the following C code blocks into assembly.
 
 ### Question 1
-```
+```c
 #include <unistd.h>
 int main() {
 	while(1) {
@@ -33,7 +33,7 @@ int main() {
 
 ### Question 2
 
-```
+```c
 #include <unistd.h>
 int main() {
 	int n = 0;
@@ -48,7 +48,7 @@ int main() {
 
 ### Question 3
 
-```
+```c
 #include <unistd.h>
 int main() {
 	char *status = "F";
