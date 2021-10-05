@@ -28,5 +28,6 @@ def vm(program):
                 left  = stack.pop()
                 stack.append(left // right)
         prog_counter += 1
+        print(stack)
     print(stack)
 
