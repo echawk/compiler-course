@@ -6,13 +6,13 @@ compiler for a stack-based virtual machine (defined below).
 For those who need a refresher on RPN, this is how it looks:
 
 ```
-7 22 3 + 5 * 4 + 3 -
+7 22 + 3 + 5 * 4 + 3 -
 ```
 
 The above operation expressed in infix notation is:
 
 ```
-3 - (4 + (5 * (3 + 22 + 7)))
+//fixme
 ```
 
 ## Front End
