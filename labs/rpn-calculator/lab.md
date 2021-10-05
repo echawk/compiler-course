@@ -50,6 +50,16 @@ The virtual machine shall implement the following instructions:
 
 **DIV** - floor divides the top of the stack from every value left in the stack and leaves the result at the top of the stack
 
+In addition to the above 5 instructions, you also have to implement the following:
+
+**SQRT** - returns the floored sqrt of the sum of the current stack
+
+**FACT** - returns the facotrial of the sum of the current stack
 
 Do **not** worry about implementing floating point arithmetic or negative numbers, this is
 out of scope for this lab.
+
+## Extra Credit
+
+* implement floating point numbers
+* emit x86 assembly instead of the above VM for your front end (make sure the assembly *actually works*)
