@@ -40,21 +40,21 @@ emits assembly.
 
 The virtual machine shall implement the following instructions:
 
-**PUSH** - pushes a value onto the stack
+**PUSH** - pushes a value onto the top of the stack
 
-**ADD** - adds all values in the stack and leaves the result at the top of the stack
+**ADD** - adds the top two values in the stack and leaves the result at the top of the stack
 
-**SUB** - subtracts the top of the stack from every value left in the stack and leaves result at the top of the stack
+**SUB** - subtracts the top of the stack in the stack and leaves result at the top of the stack
 
-**MUL** - multiplies all values in the stack and leaves the result at the top of the stack
+**MUL** - multiplies the top two values stack and leaves the result at the top of the stack
 
-**DIV** - floor divides the top of the stack from every value left in the stack and leaves the result at the top of the stack
+**DIV** - floor divides the top of the stack by the next value in the stack and leaves the result at the top of the stack
 
 In addition to the above 5 instructions, you also have to implement the following:
 
-**SQRT** - returns the floored sqrt of the sum of the current stack
+**SQRT** - returns the floored sqrt of the top of the stack
 
-**FACT** - returns the facotrial of the sum of the current stack
+**FACT** - returns the facotrial of the top of the stack
 
 Do **not** worry about implementing floating point arithmetic or negative numbers, this is
 out of scope for this lab.
