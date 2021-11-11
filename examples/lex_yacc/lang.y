@@ -1,5 +1,8 @@
 %{
-
+void yyerror(char *s);
+#include <stdio.h>
+#include <stdlib.h>
+int yylex();
 %}
 
 %union {int num; char* id;}
@@ -36,3 +39,8 @@ expr: expr ADD expr
     | INTLIT
     ;
 %%
+
+void yyerror (char *s) {
+    fprintf(stderr, "%s\n", s);
+}
+

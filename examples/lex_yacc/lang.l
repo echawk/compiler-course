@@ -25,5 +25,6 @@
 "/"   {return DIV;}
 
 [0-9]+ { yylval.num = atoi(yytext); return INTLIT; }
-. {ECHO; yyerror("Unexepected character");}
 %%
+
+int yywrap (void) { return 1; }
