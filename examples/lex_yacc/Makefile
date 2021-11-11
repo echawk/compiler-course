@@ -7,7 +7,7 @@ CC=gcc
 SRC_BASE=lang
 
 $(SRC_BASE): lex.yy.c
-	$(CC) -lfl lex.yy.c y.tab.c -o $@
+	$(CC) -lfl lex.yy.c $(SRC_BASE).tab.c -o $@
 
 lex.yy.c: y.tab.c
 	lex $(SRC_BASE).l

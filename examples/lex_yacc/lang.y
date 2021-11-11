@@ -2,7 +2,9 @@
 
 %}
 
-%token RET "ret" IF "if" LET "let" IDENT NUMLIT
+%union {int num; char* id;}
+
+%token RET "ret" IF "if" LET "let" IDENT INTLIT
 %token LPAREN "(" RPAREN ")" LBRACE "{" RBRACE "}" SEMI ";"
 %token ASSIGN "=" LT "<" GT ">" EQ "==" AND "&&" OR "||"
 %token ADD "+" SUB "-" MUL "*" DIV "/"
@@ -31,6 +33,6 @@ expr: expr ADD expr
     | expr LT expr
     | expr GT expr
     | expr EQ expr
-    | NUMLIT
+    | INTLIT
     ;
 %%
