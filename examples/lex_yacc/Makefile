@@ -17,4 +17,4 @@ y.tab.c: lang.y
 	bison $(SRC_BASE).y --report=all
 
 clean:
-	rm y.tab.c y.tab.h lex.yy.c $(SRC_BASE)
+	rm $(SRC_BASE).tab.c $(SRC_BASE).tab.h lex.yy.c $(SRC_BASE).output $(SRC_BASE)
