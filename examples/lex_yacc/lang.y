@@ -19,6 +19,8 @@ int yylex();
 
 /*Productions below */
 %%
+program: stmts
+       ;
 stmts: stmts stmt
      | stmt
      ;
