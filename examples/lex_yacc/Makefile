@@ -15,7 +15,7 @@ lex.yy.c: y.tab.c
 	lex $(SRC_BASE).l
 
 y.tab.c: lang.y
-	bison -d $(SRC_BASE).y
+	yacc -d $(SRC_BASE).y -o $(SRC_BASE).tab.c
 	bison $(SRC_BASE).y --report=all
 
 clean:

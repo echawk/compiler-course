@@ -7,10 +7,10 @@ int yylex();
 
 %union {int num; char* id;}
 
-%token IF "if" LET "let" IDENT INTLIT
-%token LPAREN "(" RPAREN ")" LBRACE "{" RBRACE "}" SEMI ";"
-%token ASSIGN "=" LT "<" GT ">" EQ "==" AND "&&" OR "||"
-%token ADD "+" SUB "-" MUL "*" DIV "/"
+%token IF LET IDENT INTLIT
+%token LPAREN RPAREN LBRACE RBRACE SEMI
+%token ASSIGN LT GT  EQ AND OR
+%token ADD SUB MUL DIV
 
 /* Operator precedence (lowest to highest) */
 %left ADD SUB
