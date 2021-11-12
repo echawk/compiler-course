@@ -7,7 +7,7 @@ int yylex();
 
 %union {int num; char* id;}
 
-%token RET "ret" IF "if" LET "let" IDENT INTLIT
+%token IF "if" LET "let" IDENT INTLIT
 %token LPAREN "(" RPAREN ")" LBRACE "{" RBRACE "}" SEMI ";"
 %token ASSIGN "=" LT "<" GT ">" EQ "==" AND "&&" OR "||"
 %token ADD "+" SUB "-" MUL "*" DIV "/"
@@ -25,7 +25,6 @@ stmts: stmts stmt
 stmt: LET IDENT ASSIGN expr SEMI
     | IF LPAREN expr RPAREN LBRACE stmts RBRACE SEMI
     | expr SEMI
-    | RET expr
     ;
 expr: expr ADD expr
     | expr SUB expr

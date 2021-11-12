@@ -6,6 +6,8 @@ CC=gcc
 
 SRC_BASE=lang
 
+all: $(SRC_BASE)
+
 $(SRC_BASE): lex.yy.c
 	$(CC) -lfl lex.yy.c $(SRC_BASE).tab.c -o $@
 

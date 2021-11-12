@@ -2,20 +2,9 @@
 let x = 5;
 
 if (x > 6) {
-  ret True;
+  print 1;
 };
 
 if (x + 4 < 6 && x > 1) {
-  ret True;
+  print 1;
 };
-
-
-%token IF "if" LET "let" IDENT NUMLIT
-%token LPAREN "(" RPAREN ")" SEMI ";"
-%token ASSIGN "=" LT "<" EQ "==" AND "&&" OR "||"
-%token ADD "+" SUB "-" MUL "*" DIV "/"
-
-/*Productions below */
-%%
-
-%%

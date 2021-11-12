@@ -3,7 +3,6 @@
 %}
 
 %%
-"ret" {return RET;}
 "if"  {return IF;}
 "let" {return LET;}
 
@@ -24,7 +23,9 @@
 "*"   {return MUL;}
 "/"   {return DIV;}
 
-[0-9]+ { yylval.num = atoi(yytext); return INTLIT; }
+[a-zA-Z]+ { yylval.id  = (char*) yytext;       return IDENT;  }
+[0-9]+    { yylval.num = atoi(yytext); return INTLIT; }
+[ \t\n]   ;
 %%
 
 int yywrap (void) { return 1; }
