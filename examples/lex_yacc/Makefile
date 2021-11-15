@@ -3,13 +3,14 @@
 .PHONY: clean
 
 CC=gcc
+CFLAGS=-Wall
 
 SRC_BASE=lang
 
 all: $(SRC_BASE)
 
 $(SRC_BASE): lex.yy.c
-	$(CC) -lfl lex.yy.c $(SRC_BASE).tab.c -o $@
+	$(CC) $(CFLAGS) -lfl lex.yy.c $(SRC_BASE).tab.c -o $@
 
 lex.yy.c: y.tab.c
 	lex $(SRC_BASE).l
