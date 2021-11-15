@@ -15,3 +15,10 @@ semi-complex algorithms.
 * Iterative fibonacci
 * FizzBuzz
 * ...
+
+
+## Extra Credit
+
+Write a parser for your languague. You can do this with any tool of your
+choosing, whether that be `lex` or you decide to hand roll your own.
+
