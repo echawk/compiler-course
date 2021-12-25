@@ -11,7 +11,7 @@ this course to be quite interesting as well.
 
 Contains the Labs for the course. Each lab is designed to be accomplished in
 roughly a week, if taken for 1 credit. However, if the class is taken for
-more than 1 credit, the instructure should add extra coursework.
+more than 1 credit, the instructor should add extra coursework.
 
 The labs are meant to build the student's confidence in understanding how one
 would engineer a compiler from first principles, and should able to be completed
