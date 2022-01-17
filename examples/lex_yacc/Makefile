@@ -12,7 +12,7 @@ all: $(SRC_BASE) parser.png
 $(SRC_BASE): lex.yy.c
 	$(CC) $(CFLAGS) -lfl lex.yy.c $(SRC_BASE).tab.c -o $@
 
-lex.yy.c: y.tab.c
+lex.yy.c: y.tab.c $(SRC_BASE).l
 	lex $(SRC_BASE).l
 
 lang.gv: lang.y
