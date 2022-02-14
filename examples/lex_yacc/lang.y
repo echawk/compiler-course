@@ -17,9 +17,11 @@ int yylex();
 %left MUL DIV
 %left EQ AND OR LT GT
 
+%type <a> program stmts stmt
+%type <num> expr INTLIT
 /*Productions below */
 %%
-program: stmts
+program: stmts { printf("-> %d", $1); }
        ;
 stmts: stmts stmt
      | stmt
@@ -28,16 +30,16 @@ stmt: LET IDENT ASSIGN expr SEMI
     | IF LPAREN expr RPAREN LBRACE stmts RBRACE SEMI
     | expr SEMI
     ;
-expr: expr ADD expr
-    | expr SUB expr
-    | expr MUL expr
-    | expr DIV expr
+expr: expr ADD expr { $$ = $1 + $3; }
+    | expr SUB expr { $$ = $1 - $3; }
+    | expr MUL expr { $$ = $1 * $3; }
+    | expr DIV expr { $$ = $1 / $3; }
     | expr AND expr
     | expr OR expr
     | expr LT expr
     | expr GT expr
     | expr EQ expr
-    | INTLIT
+    | INTLIT { $$ = $1; }
     ;
 %%
 
@@ -45,3 +47,4 @@ void yyerror (char *s) {
     fprintf(stderr, "%s\n", s);
 }
 
+int main() { return yyparse(); }

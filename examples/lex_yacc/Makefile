@@ -3,6 +3,8 @@
 .PHONY: clean
 
 CC=gcc
+YACC=bison
+LEX=lex
 CFLAGS=-Wall
 
 SRC_BASE=lang
@@ -13,7 +15,7 @@ $(SRC_BASE): lex.yy.c
 	$(CC) $(CFLAGS) -lfl lex.yy.c $(SRC_BASE).tab.c -o $@
 
 lex.yy.c: y.tab.c $(SRC_BASE).l
-	lex $(SRC_BASE).l
+	$(LEX) $(SRC_BASE).l
 
 lang.gv: lang.y
 	bison --graph $<
@@ -22,7 +24,7 @@ parser.png: lang.gv
 	dot -Tpng < $< > $@
 
 y.tab.c: lang.y
-	yacc -d $(SRC_BASE).y -o $(SRC_BASE).tab.c
+	$(YACC) -d $(SRC_BASE).y -o $(SRC_BASE).tab.c
 	bison $(SRC_BASE).y --report=all
 
 clean:
